@@ -61,29 +61,39 @@ The code to the test can be found in main_test.go
   ```
     go test
   ```
-  
-### Break down into end to end tests
+ 
 
-Explain what these tests test and why
+## Deployment Using Docker
+
+To run this on Docker you should already have a Docker installed. 
+
+### Installation
+
+The installation instructions:
+
+Mac: can be found at https://docs.docker.com/docker-for-mac/
+
+Windows: https://docs.docker.com/docker-for-windows/
+
+### Creating a docker image
+
+Once you have Docker installed you can create an image by running (make sure that you are in URLShortner when you run this command
 
 ```
-Give an example
-```
+docker -t <imageName> .
+````
 
-### And coding style tests
-
-Explain what these tests test and why
+### Running the docker image
 
 ```
-Give an example
+docker run -i <imageName>
 ```
 
-## Deployment
+## Future Development
 
-Add additional notes about how to deploy this on a live system
+- Use the time stamp in the db to flush out URL's that have not been used for sometime.
 
-
-
+- In case the there is a collision in the Hashing Function increase the length of the short-URL
 
 
 ## Authors
