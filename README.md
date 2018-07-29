@@ -4,8 +4,7 @@
 
 -URL Shortening
 -Visitor Counting
--Expirable Links
--URL deletion
+
 
 ## Getting Started
 
