@@ -109,7 +109,9 @@ func EntryText() {
 	fmt.Println("Hello, How can I help you today?")
 	fmt.Println("Enter s: To Shorten URL")
 	fmt.Println("Enter l: To Lengthen the shortURL")
-	fmt.Println("Enter e to EXIT")
+	fmt.Println("Enter c: to continue")
+	fmt.Println("Enter e: To EXIT")
+	fmt.Println("NOTE: The choices are case sensitive")
 }
 
 func shortenURL() {
@@ -135,24 +137,35 @@ func lengthenURL() {
 	surl = strings.TrimSpace(surl)
 	fmt.Println(getLongURL(surl))
 }
+func input() {
+	fmt.Println("Would you like to continue ? ")
+	var text string
+	fmt.Scanln(&text)
+	text = strings.TrimSpace(text)
+	choices(text)
+}
+
+func choices(choice string) {
+	switch choice {
+	case "s":
+		shortenURL()
+		input()
+
+	case "l":
+		lengthenURL()
+		input()
+
+	case "c":
+		input()
+	default:
+		break
+	}
+}
 
 func main() {
 	EntryText()
 	var text string
 	fmt.Scanln(&text)
 	text = strings.TrimSpace(text)
-	for text != "e" {
-		if text == "s" {
-			shortenURL()
-
-		}
-		if text == "l" {
-			lengthenURL()
-		}
-		fmt.Println("")
-		fmt.Println("Try Again? Enter your choice")
-		EntryText()
-		fmt.Scanln(&text)
-
-	}
+	choices(text)
 }
