@@ -23,21 +23,21 @@ go get github.com/go-sql-driver/mysql
 
 ### Installing
 
-A step by step series of examples that tell you how to get a development env running
+To run the application first clone the application via
+``` git clone https://github.com/Shivi127/URLShortner.git``` 
 
-Say what the step will be
-
+Then cd into the folder 
 ```
-Give the example
-```
-
-And repeat
-
-```
-until finished
+cd URLShortner
 ```
 
-End with an example of getting some data out of the system or using it for a little demo
+To run the go application straight from your terminal
+
+```
+go run main.go
+```
+
+
 
 ## Running the tests
 
