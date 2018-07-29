@@ -74,9 +74,8 @@ Add additional notes about how to deploy this on a live system
 
 ## Authors
 
-* **Shiavngi Singh** 
+* **Shivangi Singh** 
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
 ## License
 
