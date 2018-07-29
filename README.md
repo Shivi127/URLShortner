@@ -2,14 +2,13 @@
 
 # URL-Shortner build in GoLang
 
--URL Shortening
+- Shorten a URL to a smallURL (10 characters long)
 
--Visitor Counting
+- Given the shortURL get the longURL
+
+- Visitor Counting
 
 
-## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
 ### Prerequisites
 
@@ -41,8 +40,28 @@ go run main.go
 
 ## Running the tests
 
-Explain how to run the automated tests for this system
+These are the various tests I ahve implemented to make sure that the code is running as I expect it to. 
+The code to the test can be found in main_test.go
 
+  - TestIsValidURLTrue
+  
+  - TestIsValidURLFalse
+
+  - TestGetshortURL
+  
+  - TestLengthenURLTrue
+  
+  - TestLengthenURLFalse
+  
+  - TestAddtoDB
+  
+  - TestIncrementCount
+  
+  You can check the functionality of the code by running 
+  ```
+    go test
+  ```
+  
 ### Break down into end to end tests
 
 Explain what these tests test and why
@@ -63,11 +82,6 @@ Give an example
 
 Add additional notes about how to deploy this on a live system
 
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
 
 
 
