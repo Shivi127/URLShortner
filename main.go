@@ -24,10 +24,10 @@ func dbconnect() (db *sql.DB) {
 	return db
 }
 
-func updateCount(count int) {
+func updateCount(count int, surl string) {
 	db := dbconnect()
 	time := time.Now()
-	stmtIns, err := db.Query("UPDATE new_table SET visit_count = ? , LastVisit =?", count+1, time)
+	stmtIns, err := db.Query("UPDATE new_table SET visit_count = ? , LastVisit =? where surl =?", count+1, time, surl)
 	if err != nil {
 		panic(err.Error())
 	}
@@ -54,8 +54,9 @@ func addURLtoDB(surl string, lurl string) {
 	}
 
 	if compareURL(lurl, lurldb) == true {
-		updateCount(visitCount)
+		updateCount(visitCount, surl)
 		fmt.Println("ShortURL was Successfully created/updated")
+		fmt.Println("Fun Fact the URL has been accessed ? times", visitCount)
 	} else {
 		fmt.Println("Oops there is a collision try refreshing the db")
 	}
@@ -86,8 +87,9 @@ func getLongURL(surl string) string {
 	if err != nil {
 		return ("Invalid Shortened URL")
 	}
-	updateCount(visitCount)
+	updateCount(visitCount, surl)
 	fmt.Println("This is the short URl", surl, " for ", lurldb)
+	fmt.Println("Fun Fact the URL has been accessed ? times", visitCount)
 	return (lurldb)
 }
 
@@ -140,6 +142,7 @@ func lengthenURL() {
 	fmt.Println(getLongURL(surl))
 }
 func input() {
+	EntryText()
 	fmt.Println("Would you like to continue ? ")
 	var text string
 	fmt.Scan(&text)
@@ -157,10 +160,11 @@ func choices(choice string) {
 		lengthenURL()
 		input()
 
-	case "c":
-		input()
-	default:
+	case "e":
 		break
+
+	default:
+		input()
 	}
 }
 
