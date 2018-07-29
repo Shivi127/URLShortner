@@ -94,6 +94,9 @@ docker run -i <imageName>
 
 - In case the there is a collision in the Hashing Function increase the length of the short-URL
 
+- Build a Frontend (Web Application) 
+
+- Implement a redirect
 
 ## Authors
 
