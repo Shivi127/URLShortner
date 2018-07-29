@@ -1,12 +1,14 @@
 package main
 
 import (
+	"bufio"
 	"crypto/sha512"
 	"database/sql"
 	"encoding/base64"
 	"fmt"
 	"log"
 	"net/url"
+	"os"
 	"strings"
 	"time"
 
@@ -140,7 +142,7 @@ func lengthenURL() {
 func input() {
 	fmt.Println("Would you like to continue ? ")
 	var text string
-	fmt.Scanln(&text)
+	fmt.Scan(&text)
 	text = strings.TrimSpace(text)
 	choices(text)
 }
@@ -164,8 +166,9 @@ func choices(choice string) {
 
 func main() {
 	EntryText()
+	reader := bufio.NewReader(os.Stdin)
 	var text string
-	fmt.Scanln(&text)
+	text, _ = reader.ReadString('\n')
 	text = strings.TrimSpace(text)
 	choices(text)
 }
